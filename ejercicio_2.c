@@ -4,29 +4,33 @@
 #define MAX 20
 
 void generarEspiral(int n, int matriz[MAX][MAX]) {
-    int valor = 1;
+    int valor = 1, i,j;
     int top = 0, bottom = n - 1;
     int left = 0, right = n - 1;
-
+    
     while (valor <= n * n) {
-        // 1. Recorrer de izquierda a derecha (fila superior)
-        // TODO: Escribir el bucle for que llena desde 'left' hasta 'right'
-        // Tip: Al terminar, incrementar 'top'
+        for(i=left; i<=right; i++){
+            matriz[top][i]=valor++;
+        }
+        top++;
         
-        // 2. Recorrer de arriba a abajo (columna derecha)
-        // TODO: Escribir el bucle for que llena desde 'top' hasta 'bottom'
-        // Tip: Al terminar, decrementar 'right'
-
-        // 3. Recorrer de derecha a izquierda (fila inferior)
+        for(i=top; i<=bottom; i++){
+            matriz[i][right]=valor++;
+        }
+        right--;
+        
         if (top <= bottom) {
-            // TODO: Escribir el bucle for
-            // Tip: Al terminar, decrementar 'bottom'
+            for(i=right; i>=left; i--){
+                matriz[bottom][i]=valor++;
+            }
+            bottom--;
         }
 
-        // 4. Recorrer de abajo a arriba (columna izquierda)
         if (left <= right) {
-            // TODO: Escribir el bucle for
-            // Tip: Al terminar, incrementar 'left'
+            for(i=bottom; i>=top; i--){
+                matriz[i][left]=valor++;
+            }
+            left++;
         }
     }
 }
