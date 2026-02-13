@@ -24,7 +24,7 @@ int main() {
                 descifrarMensaje();
                 break;
             case 3:
-                printf("Saliendo del programaaaaaaa...\n");
+                printf("Saliendo del programa...\n");
                 return 0;
             default:
                 printf("Opción no válida. Intente de nuevo.\n");
