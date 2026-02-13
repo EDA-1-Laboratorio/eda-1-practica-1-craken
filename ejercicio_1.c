@@ -43,7 +43,7 @@ void crearMensaje() {
     scanf("%d", &col);
 
     char escitala[ren][col];
-    char texto[ren * col]; // Arreglo lineal para el texto original
+    char texto[ren*col]; // Arreglo lineal para el texto original
 
     printf("Escriba el texto a cifrar (sin espacios): ");
     scanf("%s", texto);
@@ -57,7 +57,12 @@ void crearMensaje() {
        
     // ... (Tu código aquí) ...
 
-
+    for(i=0; i<ren; i++){
+        for(j=0; j<col; j++){
+            escitala[i][j]=texto[k++];
+        }
+    }
+    
     printf("El texto cifrado (leído de la tira) es:\n");
 
     // PASO 2: Leer la matriz para obtener el cifrado
@@ -67,7 +72,12 @@ void crearMensaje() {
        Tip: Ahora el bucle externo debe controlar las columnas y el interno los renglones. */
 
     // ... (Tu código aquí) ...
-    
+
+    for(i=0; i<col; i++){
+        for(j=0; j<ren; j++){
+            printf("%c", escitala[j][i]);
+        }
+    }
     printf("\n");
 }
 
@@ -94,9 +104,13 @@ void descifrarMensaje() {
        Tip: El orden de los bucles 'for' es inverso al llenado del cifrado normal. 
        Debes llenar columna por columna usando el 'texto' cifrado. */
 
-    // ... (Tu código aquí) ...
+    // ... (Tu código aquí) ...+
 
-
+    for(i=0; i<col; i++){
+        for(j=0; j<ren; j++){
+            escitala[j][i]=texto[k++];
+        }
+    }
     printf("El texto descifrado es:\n");
 
     // PASO 2: Leer el mensaje original
@@ -106,6 +120,11 @@ void descifrarMensaje() {
 
     // ... (Tu código aquí) ...
 
+    for(i=0; i<ren; i++){
+        for(j=0; j<col; j++){
+            printf("%c", escitala[i][j]);
+        }
+    }
     printf("\n");
 }
 
