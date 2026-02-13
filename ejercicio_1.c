@@ -37,7 +37,7 @@ void crearMensaje() {
     int ren, col, i, j, k = 0;
 
     printf("\n--- CIFRADO ---\n");
-    printf("Ingresar el tamaño de la escítala (Renglones): ");      //Se le pregunta al usuaio, las dimensiones de la matriz en la escítala
+    printf("Ingresar el tamaño de la escítala (Renglones): ");      //Se le pregunta al usuario, las dimensiones de la matriz en la escítala
     scanf("%d", &ren);
     printf("Ingresar el tamaño de la escítala (Columnas/Caras): ");
     scanf("%d", &col);
@@ -57,7 +57,7 @@ void crearMensaje() {
        
     // ... (Tu código aquí) ...
 
-    for(i=0; i<ren; i++){         // Almacenando los caracteres del arreglo texto en cada uno de los indices de la escítala por reglones, izquierda a derecha
+    for(i=0; i<ren; i++){         // Almacenando los caracteres del arreglo texto en cada uno de los índices de la escítala por reglones, izquierda a derecha
         for(j=0; j<col; j++){
             escitala[i][j]=texto[k++];
         }
@@ -106,7 +106,7 @@ void descifrarMensaje() {
 
     // ... (Tu código aquí) ...+
 
-    for(i=0; i<col; i++){     //Cada uno de los caracteresa almacenados en los índices del arreglo linal texto, son asignados en los indices de la escitala, 
+    for(i=0; i<col; i++){     //Cada uno de los caracteres almacenados en los índices del arreglo lineal texto, son asignados en los índices de la escitala, 
         for(j=0; j<ren; j++){         // columna por columna
             escitala[j][i]=texto[k++];
         }
@@ -120,7 +120,7 @@ void descifrarMensaje() {
 
     // ... (Tu código aquí) ...
 
-    for(i=0; i<ren; i++){      //Imprime el contenido de los indices del arreglo escitala, reglón por reglón
+    for(i=0; i<ren; i++){      //Imprime el contenido de los índices del arreglo escítala, reglón por reglón
         for(j=0; j<col; j++){
             printf("%c", escitala[i][j]);
         }
